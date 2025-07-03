@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "chatApp",
+  "keywords": [
+    "MERN"
+  ],
+  "license": "ISC",
+  "author": "K RAHUL",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "dev:full": "concurrently \"npm run dev\" \"npm run dev --prefix Frontend\"",
+    "start": "node index.js",
+    "start:prod": "$env:NODE_ENV='production'; node index.js",
+    "build": "npm install && npm install --prefix Frontend && npm run build --prefix Frontend",
+    "build:prod": "npm run build && $env:NODE_ENV='production'; node index.js",
+    "serve": "npm run build && npm start",
+    "prod": "npm run build && npm run start:prod"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
